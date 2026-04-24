@@ -204,18 +204,6 @@
       animation: fadeInDown 0.6s ease;
     }
 
-    .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(42px, 8vw, 80px);
-      line-height: 0.95;
-      letter-spacing: 3px;
-      animation: fadeInDown 0.7s ease 0.1s both;
-    }
-
-    .hero h1 span {
-      color: var(--amber);
-    }
-
     .hero p {
       max-width: 500px;
       margin: 16px auto 0;
@@ -223,30 +211,6 @@
       font-size: 16px;
       line-height: 1.6;
       animation: fadeInDown 0.7s ease 0.2s both;
-    }
-
-    .hero-cta {
-      margin-top: 32px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--amber);
-      color: var(--bg);
-      font-weight: 700;
-      font-size: 15px;
-      padding: 14px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 30px rgba(245, 158, 11, 0.3);
-      animation: fadeInDown 0.7s ease 0.3s both;
-    }
-
-    .hero-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 40px rgba(245, 158, 11, 0.45);
     }
 
     /* ══════════ FILTERS ══════════ */
@@ -819,6 +783,33 @@
       color: var(--text-muted);
     }
 
+    /* Breakdown detalhado de cada item do carrinho (conta separada) */
+    .brk-list {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      font-size: 11.5px;
+      line-height: 1.55;
+    }
+    .brk-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--text-muted, #cfcfcf);
+    }
+    .brk-row.muted { color: var(--text-dim, #8d8d8d); font-style: italic; }
+    .brk-row.warn  { color: #e88; }
+    .brk-row.brk-sub {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed rgba(255,255,255,0.15);
+      color: var(--amber, #f59e0b);
+      font-weight: 700;
+    }
+    .brk-row span:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
+
     .cart-qty {
       display: flex;
       align-items: center;
@@ -1131,11 +1122,6 @@
         font-size: 15px;
       }
 
-      .hero-cta {
-        padding: 13px 26px;
-        font-size: 14px;
-      }
-
       .menu-info {
         grid-template-columns: 1fr;
         margin-top: 36px;
@@ -1223,11 +1209,6 @@
         font-size: 14px;
       }
 
-      .hero-cta {
-        padding: 12px 22px;
-        font-size: 13px;
-      }
-
       .wpp-fab {
         width: 52px;
         height: 52px;
@@ -1269,10 +1250,6 @@
     @media (max-height: 500px) and (orientation: landscape) {
       .hero {
         padding: 32px 20px 24px;
-      }
-
-      .hero h1 {
-        font-size: clamp(32px, 6vw, 56px);
       }
     }
 
@@ -1344,17 +1321,7 @@
   <!-- ═══ HERO ═══ -->
   <section class="hero">
     <div class="hero-badge">🔥 O verdadeiro sabor do Grego</div>
-    <h1>SABOR QUE<br><span>MARCA</span></h1>
     <p>Lanches artesanais preparados na hora, com ingredientes selecionados e aquele sabor que não tem igual.</p>
-    <button type="button" class="hero-cta" onclick="abrirCarrinho()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-        <path
-          d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 0 0 .613.613l4.458-1.495A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 0 1-5.39-1.584l-.386-.232-2.646.887.887-2.646-.232-.386A9.94 9.94 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
-      </svg>
-      Pedir pelo WhatsApp
-    </button>
   </section>
 
   <!-- ═══ FILTROS ═══ -->
@@ -1804,14 +1771,15 @@
         </div>
 
         <div class="pers-group">
-          <div class="pers-group-title">ACOMPANHAMENTOS</div>
+          <div class="pers-group-title">ACOMPANHAMENTOS <span class="req" style="background:#2d7a4a;">inclusos</span></div>
+          <div style="font-size:12px;color:var(--text-dim);margin:-4px 0 10px;line-height:1.4;">Já vão no seu lanche sem custo adicional. <strong>Desmarque</strong> se NÃO quiser.</div>
           <label class="pers-option">
-            <input type="checkbox" name="persAcomp" value="Molho verde da casa" data-extra="0">
+            <input type="checkbox" name="persAcomp" value="Molho verde da casa" data-extra="0" checked>
             <span class="pers-option-label">Molho verde da casa</span>
             <span class="pers-option-price">Incluso</span>
           </label>
           <label class="pers-option">
-            <input type="checkbox" name="persAcomp" value="Salada" data-extra="0">
+            <input type="checkbox" name="persAcomp" value="Salada" data-extra="0" checked>
             <span class="pers-option-label">Salada</span>
             <span class="pers-option-price">Incluso</span>
           </label>
@@ -1876,7 +1844,7 @@
           <label class="pers-option">
             <input type="checkbox" name="persBebida" value="Suco Natural" data-extra="12">
             <span class="pers-option-label">Suco Natural — Verificar disponibilidade de sabores</span>
-            <span class="pers-option-price">+ R$ 10,00</span>
+            <span class="pers-option-price">+ R$ 12,00</span>
           </label>
         </div>
 
@@ -1905,13 +1873,17 @@
 
         <div class="cart-form">
           <input type="text" id="custName" placeholder="Seu nome completo" autocomplete="name" required maxlength="80">
+          <input type="tel" id="custPhone" placeholder="Telefone / WhatsApp (ex: 11 9XXXX-XXXX)" autocomplete="tel" required maxlength="20" inputmode="tel">
           <input type="text" id="custAddress" placeholder="Endereço de entrega (rua, número, bairro)" autocomplete="street-address" required maxlength="150">
-          <textarea id="custNotes" placeholder="Observações (opcional) — ex: pão francês, sem cebola, adicional bacon..." rows="2" maxlength="300"></textarea>
+          <textarea id="custNotes" placeholder="Observações (opcional) — ex: sem cebola, ponto da carne, troco para X..." rows="2" maxlength="300"></textarea>
         </div>
 
         <div class="cart-totals">
-          <div class="cart-row"><span>Subtotal dos produtos</span><span id="cartSubtotal">R$ 0,00</span></div>
-          <div class="cart-row total"><span>Total</span><span class="val" id="cartTotal">R$ 0,00</span></div>
+          <div class="cart-row"><span>Subtotal dos lanches</span><span id="cartSubLanches">R$ 0,00</span></div>
+          <div class="cart-row"><span>Adicionais</span><span id="cartSubAdicionais">R$ 0,00</span></div>
+          <div class="cart-row"><span>Bebidas</span><span id="cartSubBebidas">R$ 0,00</span></div>
+          <div class="cart-row"><span>Subtotal geral</span><span id="cartSubtotal">R$ 0,00</span></div>
+          <div class="cart-row total"><span>TOTAL A PAGAR</span><span class="val" id="cartTotal">R$ 0,00</span></div>
         </div>
 
         <button type="button" class="cart-finish" id="finishBtn" onclick="finalizarPedido()">
@@ -1975,8 +1947,8 @@
 
     // Gera uma chave única baseada em nome + personalizações (para agrupar iguais)
     function gerarKey(name, pao, acomps, adicionais, bebidas) {
-      const a = [...acomps].sort().join(',');
-      const d = [...adicionais].sort().join(',');
+      const a = [...(acomps || [])].sort().join(',');
+      const d = [...(adicionais || [])].sort().join(',');
       const b = [...(bebidas || [])].sort().join(',');
       return `${name}|${pao || ''}|${a}|${d}|${b}`;
     }
@@ -1995,11 +1967,15 @@
           pao: null,
           paoExtra: 0,
           acomps: [],
+          acompsRemovidos: [],
           adicionais: [],
+          adicionaisDetalhe: [],
           adicionaisExtra: 0,
           bebidas: [],
+          bebidasDetalhe: [],
           bebidasExtra: 0,
-          unitPrice: price
+          unitPrice: price,
+          isBebidaAvulsa: true
         });
         mostrarToast(`${name} adicionado ✓`);
       } else {
@@ -2075,6 +2051,9 @@
       // Reseta todas as seleções
       document.querySelectorAll('#persModal input[type="radio"], #persModal input[type="checkbox"]')
         .forEach(inp => { inp.checked = false; });
+      // Acompanhamentos (molho verde e salada) são INCLUSOS por padrão — re-marca após reset
+      document.querySelectorAll('#persModal input[name="persAcomp"]')
+        .forEach(inp => { inp.checked = true; });
       document.querySelectorAll('#persModal .pers-option')
         .forEach(el => el.classList.remove('checked'));
 
@@ -2113,18 +2092,25 @@
       const pao      = paoInput ? paoInput.value : null;
       const paoExtra = paoInput ? parseFloat(paoInput.dataset.extra) : 0;
 
+      // Acompanhamentos INCLUSOS por padrão: checked = fica no lanche, unchecked = cliente pediu SEM
+      const todosAcomps = [...document.querySelectorAll('#persModal input[name="persAcomp"]')].map(i => i.value);
       const acomps = [...document.querySelectorAll('#persModal input[name="persAcomp"]:checked')]
         .map(i => i.value);
+      const acompsRemovidos = todosAcomps.filter(a => !acomps.includes(a));
 
+      // Adicionais: detalhados com preço unitário pra mensagem
       const adicInputs = [...document.querySelectorAll('#persModal input[name="persAdic"]:checked')];
       const adicionais = adicInputs.map(i => i.value);
+      const adicionaisDetalhe = adicInputs.map(i => ({ nome: i.value, preco: parseFloat(i.dataset.extra) }));
       const adicionaisExtra = adicInputs.reduce((acc, i) => acc + parseFloat(i.dataset.extra), 0);
 
+      // Bebidas: também detalhadas
       const bebidaInputs = [...document.querySelectorAll('#persModal input[name="persBebida"]:checked')];
       const bebidas = bebidaInputs.map(i => i.value);
+      const bebidasDetalhe = bebidaInputs.map(i => ({ nome: i.value, preco: parseFloat(i.dataset.extra) }));
       const bebidasExtra = bebidaInputs.reduce((acc, i) => acc + parseFloat(i.dataset.extra), 0);
 
-      return { pao, paoExtra, acomps, adicionais, adicionaisExtra, bebidas, bebidasExtra };
+      return { pao, paoExtra, acomps, acompsRemovidos, adicionais, adicionaisDetalhe, adicionaisExtra, bebidas, bebidasDetalhe, bebidasExtra };
     }
 
     function atualizarTotalPers() {
@@ -2149,7 +2135,7 @@
 
     function confirmarPersonalizacao() {
       if (!persAtual) return;
-      const { pao, paoExtra, acomps, adicionais, adicionaisExtra, bebidas, bebidasExtra } = lerPersonalizacao();
+      const { pao, paoExtra, acomps, acompsRemovidos, adicionais, adicionaisDetalhe, adicionaisExtra, bebidas, bebidasDetalhe, bebidasExtra } = lerPersonalizacao();
 
       // Pão obrigatório só para "Grego Tradicional"
       const temEscolhaDePao = persAtual.name === 'Grego Tradicional';
@@ -2181,9 +2167,12 @@
         pao: paoFinal,
         paoExtra: paoExtraFinal,
         acomps,
+        acompsRemovidos,
         adicionais,
+        adicionaisDetalhe,
         adicionaisExtra,
         bebidas,
+        bebidasDetalhe,
         bebidasExtra,
         unitPrice
       });
@@ -2210,24 +2199,57 @@
         finishBtn.disabled = false;
 
         carrinho.forEach(item => {
-          // Monta linhas de detalhes (personalizações)
-          const detalhes = [];
-          if (item.pao) detalhes.push(`Pão: ${item.pao}${item.paoExtra > 0 ? ' (+' + formatBRL(item.paoExtra) + ')' : ''}`);
-          if (item.acomps && item.acomps.length) detalhes.push(`Acomp.: ${item.acomps.join(', ')}`);
-          if (item.adicionais && item.adicionais.length) detalhes.push(`Adicionais: ${item.adicionais.join(', ')}`);
-          if (item.bebidas && item.bebidas.length) detalhes.push(`Bebidas: ${item.bebidas.join(', ')}`);
+          // ─── BREAKDOWN detalhado de cada componente do item ───
+          const linhas = [];
 
-          const detalhesHtml = detalhes.length
-            ? `<div class="cart-item-price" style="margin-top:4px;font-size:11px;color:var(--text-dim);">${detalhes.join(' · ')}</div>`
-            : '';
+          // Bebida avulsa: mostra só "Bebida" como linha base
+          if (item.isBebidaAvulsa) {
+            linhas.push(`<div class="brk-row"><span>Bebida (${item.name})</span><span>${formatBRL(item.basePrice)}</span></div>`);
+          } else {
+            // Lanche base
+            linhas.push(`<div class="brk-row"><span>Lanche base</span><span>${formatBRL(item.basePrice)}</span></div>`);
+
+            // Pão
+            if (item.pao) {
+              if (item.paoExtra > 0) {
+                linhas.push(`<div class="brk-row"><span>Pão: ${item.pao}</span><span>+${formatBRL(item.paoExtra)}</span></div>`);
+              } else {
+                linhas.push(`<div class="brk-row muted"><span>Pão: ${item.pao}</span><span>incluso</span></div>`);
+              }
+            }
+
+            // Acompanhamentos (inclusos) + removidos
+            if (item.acomps && item.acomps.length) {
+              linhas.push(`<div class="brk-row muted"><span>Acompanhamentos: ${item.acomps.join(', ')}</span><span>inclusos</span></div>`);
+            }
+            if (item.acompsRemovidos && item.acompsRemovidos.length) {
+              linhas.push(`<div class="brk-row warn"><span>SEM: ${item.acompsRemovidos.join(', ')}</span><span>—</span></div>`);
+            }
+
+            // Adicionais — cada um com seu preço
+            if (item.adicionaisDetalhe && item.adicionaisDetalhe.length) {
+              item.adicionaisDetalhe.forEach(a => {
+                linhas.push(`<div class="brk-row"><span>Adicional: ${a.nome}</span><span>+${formatBRL(a.preco)}</span></div>`);
+              });
+            }
+
+            // Bebidas junto do lanche — cada uma com seu preço
+            if (item.bebidasDetalhe && item.bebidasDetalhe.length) {
+              item.bebidasDetalhe.forEach(b => {
+                linhas.push(`<div class="brk-row"><span>Bebida: ${b.nome}</span><span>+${formatBRL(b.preco)}</span></div>`);
+              });
+            }
+          }
+
+          const breakdownHtml = `<div class="brk-list">${linhas.join('')}<div class="brk-row brk-sub"><span>Subtotal por unidade</span><span>${formatBRL(item.unitPrice)}</span></div></div>`;
 
           const row = document.createElement('div');
           row.className = 'cart-item';
           row.innerHTML = `
             <div class="cart-item-info">
               <div class="cart-item-name">${item.name}</div>
-              <div class="cart-item-price">${formatBRL(item.unitPrice)} cada · ${formatBRL(item.unitPrice * item.qty)}</div>
-              ${detalhesHtml}
+              <div class="cart-item-price">${formatBRL(item.unitPrice)} × ${item.qty} = <strong>${formatBRL(item.unitPrice * item.qty)}</strong></div>
+              ${breakdownHtml}
             </div>
             <div class="cart-qty">
               <button type="button" class="qty-btn" data-key="${item.key}" data-delta="-1" aria-label="Diminuir">−</button>
@@ -2246,9 +2268,31 @@
         });
       }
 
-      const sub = subtotalCarrinho();
-      document.getElementById('cartSubtotal').textContent = formatBRL(sub);
-      document.getElementById('cartTotal').textContent    = formatBRL(sub);
+      const r = resumoCarrinho();
+      document.getElementById('cartSubLanches').textContent    = formatBRL(r.lanches);
+      document.getElementById('cartSubAdicionais').textContent = formatBRL(r.adicionais);
+      document.getElementById('cartSubBebidas').textContent    = formatBRL(r.bebidas);
+      document.getElementById('cartSubtotal').textContent      = formatBRL(r.total);
+      document.getElementById('cartTotal').textContent         = formatBRL(r.total);
+    }
+
+    // ═══════════════════════════════════════════════════
+    // RESUMO FINANCEIRO — separa lanches, adicionais, bebidas
+    // ═══════════════════════════════════════════════════
+    function resumoCarrinho() {
+      let lanches = 0, adicionais = 0, bebidas = 0;
+      carrinho.forEach(i => {
+        if (i.isBebidaAvulsa) {
+          bebidas += i.basePrice * i.qty;
+        } else {
+          // Lanches: preço base + pão extra = valor do lanche em si
+          lanches    += (i.basePrice + (i.paoExtra || 0)) * i.qty;
+          adicionais += (i.adicionaisExtra || 0) * i.qty;
+          bebidas    += (i.bebidasExtra || 0) * i.qty;
+        }
+      });
+      const total = lanches + adicionais + bebidas;
+      return { lanches, adicionais, bebidas, total };
     }
 
     // ═══════════════════════════════════════════════════
@@ -2290,6 +2334,7 @@
       if (carrinho.length === 0) return;
 
       const nome     = document.getElementById('custName').value.trim();
+      const telefone = document.getElementById('custPhone').value.trim();
       const endereco = document.getElementById('custAddress').value.trim();
       const obs      = document.getElementById('custNotes').value.trim();
 
@@ -2298,38 +2343,96 @@
         document.getElementById('custName').focus();
         return;
       }
+      if (!telefone || telefone.replace(/\D/g, '').length < 10) {
+        alert('Por favor, informe um telefone válido (com DDD).');
+        document.getElementById('custPhone').focus();
+        return;
+      }
       if (!endereco) {
         alert('Por favor, informe o endereço de entrega.');
         document.getElementById('custAddress').focus();
         return;
       }
 
-      const sub   = subtotalCarrinho();
-      const total = sub;
+      const r = resumoCarrinho();
 
-      let msg  = `*🍔 NOVO PEDIDO — CHURRASCO GREGO*\n\n`;
-      msg += `*Cliente:* ${nome}\n`;
-      msg += `*Endereço:* ${endereco}\n\n`;
-      msg += `*🧾 ITENS DO PEDIDO:*\n`;
-      carrinho.forEach(item => {
-        msg += `• ${item.qty}x ${item.name} — ${formatBRL(item.unitPrice * item.qty)}\n`;
-        if (item.pao) {
-          msg += `   Pão: ${item.pao}${item.paoExtra > 0 ? ' (+' + formatBRL(item.paoExtra) + ')' : ''}\n`;
+      // ═════════════ MENSAGEM ═════════════
+      let msg  = `*🍔 NOVO PEDIDO — CHURRASCO GREGO VG*\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+
+      // Dados do cliente
+      msg += `*👤 CLIENTE*\n`;
+      msg += `• Nome: ${nome}\n`;
+      msg += `• Telefone: ${telefone}\n`;
+      msg += `• Endereço: ${endereco}\n\n`;
+
+      // Itens detalhados
+      msg += `*🧾 ITENS DO PEDIDO (conta detalhada)*\n\n`;
+
+      carrinho.forEach((item, idx) => {
+        msg += `*${idx + 1}) ${item.name}* — qtd: ${item.qty}x\n`;
+
+        if (item.isBebidaAvulsa) {
+          msg += `   • Bebida: ${formatBRL(item.basePrice)}\n`;
+        } else {
+          // Lanche base
+          msg += `   • Lanche base: ${formatBRL(item.basePrice)}\n`;
+
+          // Pão
+          if (item.pao) {
+            if (item.paoExtra > 0) {
+              msg += `   • Pão ${item.pao}: +${formatBRL(item.paoExtra)}\n`;
+            } else {
+              msg += `   • Pão ${item.pao} (incluso): R$ 0,00\n`;
+            }
+          }
+
+          // Acompanhamentos inclusos
+          if (item.acomps && item.acomps.length) {
+            msg += `   • Acompanhamentos (inclusos): ${item.acomps.join(', ')} — R$ 0,00\n`;
+          }
+          // Removidos (cliente pediu SEM)
+          if (item.acompsRemovidos && item.acompsRemovidos.length) {
+            msg += `   • ❌ SEM: ${item.acompsRemovidos.join(', ')}\n`;
+          }
+
+          // Adicionais — cada um listado com seu preço
+          if (item.adicionaisDetalhe && item.adicionaisDetalhe.length) {
+            item.adicionaisDetalhe.forEach(a => {
+              msg += `   • Adicional ${a.nome}: +${formatBRL(a.preco)}\n`;
+            });
+          }
+
+          // Bebidas junto — cada uma com seu preço
+          if (item.bebidasDetalhe && item.bebidasDetalhe.length) {
+            item.bebidasDetalhe.forEach(b => {
+              msg += `   • Bebida ${b.nome}: +${formatBRL(b.preco)}\n`;
+            });
+          }
         }
-        if (item.acomps && item.acomps.length) {
-          msg += `   Acompanhamentos: ${item.acomps.join(', ')}\n`;
+
+        msg += `   ──────────\n`;
+        msg += `   *Valor unitário:* ${formatBRL(item.unitPrice)}\n`;
+        if (item.qty > 1) {
+          msg += `   *Subtotal (${item.qty}x):* ${formatBRL(item.unitPrice * item.qty)}\n`;
         }
-        if (item.adicionais && item.adicionais.length) {
-          msg += `   Adicionais: ${item.adicionais.join(', ')} (+${formatBRL(item.adicionaisExtra)} por unidade)\n`;
-        }
-        if (item.bebidas && item.bebidas.length) {
-          msg += `   Bebidas: ${item.bebidas.join(', ')} (+${formatBRL(item.bebidasExtra)} por unidade)\n`;
-        }
+        msg += `\n`;
       });
-      msg += `\n*Subtotal dos produtos:* ${formatBRL(sub)}\n`;
-      msg += `*TOTAL A PAGAR:* ${formatBRL(total)}\n`;
-      if (obs) msg += `\n*Observações:* ${obs}\n`;
-      msg += `\nAguardo confirmação. Obrigado! 🙌`;
+
+      // Resumo financeiro separado
+      msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `*💰 RESUMO DA CONTA*\n`;
+      msg += `• Subtotal lanches: ${formatBRL(r.lanches)}\n`;
+      msg += `• Subtotal adicionais: ${formatBRL(r.adicionais)}\n`;
+      msg += `• Subtotal bebidas: ${formatBRL(r.bebidas)}\n`;
+      msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+      msg += `*🏁 TOTAL A PAGAR: ${formatBRL(r.total)}*\n`;
+
+      if (obs) {
+        msg += `\n*📝 Observações:* ${obs}\n`;
+      }
+
+      msg += `\nAguardo confirmação. Obrigado! 🙏`;
 
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
       window.open(url, '_blank');

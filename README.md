@@ -3,7 +3,7 @@
 <p align="center">Cardápio online com pedidos pelo WhatsApp (Jd. Dracena/SP)</p>
 
 <p align="center">
-  <a href="https://santanadesouzanicolas32-sketch.github.io/GREGOCARDAPIO/"><strong>🌐 Ver projeto online</strong></a>
+  <a href="https://santanadesouzanicolas32-sketch.github.io/churrasco-grego-cardapio/"><strong>🌐 Ver projeto online</strong></a>
 </p>
 
 ---
@@ -31,8 +31,8 @@
 ## 🚀 Como rodar localmente
 
 ```bash
-git clone https://github.com/santanadesouzanicolas32-sketch/GREGOCARDAPIO.git
-cd GREGOCARDAPIO
+git clone https://github.com/santanadesouzanicolas32-sketch/churrasco-grego-cardapio.git
+cd churrasco-grego-cardapio
 # abra o index.html no navegador ou use a extensão Live Server do VS Code
 ```
 
